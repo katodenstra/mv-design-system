@@ -132,7 +132,7 @@ export function TaskCard({
           {description && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="mt-2 text-[var(--text-sm)] text-[var(--action-primary)] hover:underline"
+              className="mt-2 text-[var(--text-sm)] text-[var(--action-ghost-text)] hover:underline"
             >
               {isExpanded ? 'Show less' : 'Show more'}
             </button>

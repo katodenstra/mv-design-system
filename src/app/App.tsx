@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { AppBar } from "./components/design-system/AppBar";
 import { SegmentedControl } from "./components/design-system/SegmentedControl";
@@ -29,14 +29,12 @@ export default function App() {
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [showAlert, setShowAlert] = useState(true);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    setTheme((currentTheme) => currentTheme === 'light' ? 'dark' : 'light');
   };
 
   const sampleChartData = [
@@ -370,7 +368,7 @@ export default function App() {
                   <div className="bg-[var(--surface)] rounded-[var(--radius-xl)] p-6 border border-[var(--border-subtle)]">
                     <button
                       onClick={() => setShowStickyBar(!showStickyBar)}
-                      className="px-4 py-2 bg-[var(--action-primary)] text-[var(--action-primary-text)] rounded-[var(--radius-md)] font-medium"
+                      className="px-4 py-2 bg-[var(--action-primary-bg)] text-[var(--action-primary-text)] rounded-[var(--radius-md)] font-medium"
                     >
                       {showStickyBar ? 'Hide' : 'Show'} Sticky Action Bar
                     </button>

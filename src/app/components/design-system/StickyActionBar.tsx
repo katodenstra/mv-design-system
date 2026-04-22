@@ -47,7 +47,7 @@ export function StickyActionBar({ show, primaryAction, secondaryAction, status }
                 {secondaryAction && (
                   <button
                     onClick={secondaryAction.onClick}
-                    className="px-4 py-2 bg-[var(--action-secondary)] hover:bg-[var(--action-secondary-hover)] text-[var(--action-secondary-text)] rounded-[var(--radius-md)] font-medium transition-colors"
+                    className="px-4 py-2 bg-[var(--action-secondary-bg)] hover:bg-[var(--action-secondary-hover)] text-[var(--action-secondary-text)] rounded-[var(--radius-md)] font-medium transition-colors"
                   >
                     {secondaryAction.label}
                   </button>
@@ -56,7 +56,7 @@ export function StickyActionBar({ show, primaryAction, secondaryAction, status }
                   <button
                     onClick={primaryAction.onClick}
                     disabled={primaryAction.loading}
-                    className="px-4 py-2 bg-[var(--action-primary)] hover:bg-[var(--action-primary-hover)] text-[var(--action-primary-text)] rounded-[var(--radius-md)] font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="px-4 py-2 bg-[var(--action-primary-bg)] hover:bg-[var(--action-primary-hover)] text-[var(--action-primary-text)] rounded-[var(--radius-md)] font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                   >
                     {primaryAction.loading && (
                       <span className="material-symbols-outlined text-[var(--icon-sm)] animate-spin">
