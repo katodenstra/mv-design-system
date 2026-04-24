@@ -27,25 +27,25 @@ export function KPICard({
       icon: 'text-[var(--text-tertiary)]'
     },
     primary: {
-      card: 'bg-[var(--primary-100)] dark:bg-[var(--primary-700)] dark:bg-opacity-20 border-[var(--primary-300)] dark:border-[var(--primary-500)]',
+      card: 'bg-[var(--primary-100)] dark:bg-[color-mix(in_srgb,var(--primary-700)_20%,var(--surface))] border-[var(--primary-300)] dark:border-[var(--primary-500)]',
       label: 'text-[var(--primary-700)] dark:text-[var(--primary-300)]',
       value: 'text-[var(--primary-700)] dark:text-[var(--primary-200)]',
       icon: 'text-[var(--primary-600)] dark:text-[var(--primary-400)]'
     },
     success: {
-      card: 'bg-[var(--success-100)] dark:bg-[var(--success-700)] dark:bg-opacity-15 border-[var(--success-300)] dark:border-[var(--success-600)]',
+      card: 'bg-[var(--success-100)] dark:bg-[color-mix(in_srgb,var(--success-700)_16%,var(--surface))] border-[var(--success-300)] dark:border-[var(--success-600)]',
       label: 'text-[var(--success-700)] dark:text-[var(--success-300)]',
       value: 'text-[var(--success-700)] dark:text-[var(--success-200)]',
       icon: 'text-[var(--success-600)] dark:text-[var(--success-400)]'
     },
     warning: {
-      card: 'bg-[var(--warning-100)] dark:bg-[var(--warning-700)] dark:bg-opacity-15 border-[var(--warning-300)] dark:border-[var(--warning-600)]',
+      card: 'bg-[var(--warning-100)] dark:bg-[color-mix(in_srgb,var(--warning-700)_16%,var(--surface))] border-[var(--warning-300)] dark:border-[var(--warning-600)]',
       label: 'text-[var(--warning-700)] dark:text-[var(--warning-300)]',
       value: 'text-[var(--warning-700)] dark:text-[var(--warning-200)]',
       icon: 'text-[var(--warning-600)] dark:text-[var(--warning-400)]'
     },
     error: {
-      card: 'bg-[var(--error-100)] dark:bg-[var(--error-700)] dark:bg-opacity-15 border-[var(--error-300)] dark:border-[var(--error-600)]',
+      card: 'bg-[var(--error-100)] dark:bg-[color-mix(in_srgb,var(--error-700)_16%,var(--surface))] border-[var(--error-300)] dark:border-[var(--error-600)]',
       label: 'text-[var(--error-700)] dark:text-[var(--error-300)]',
       value: 'text-[var(--error-700)] dark:text-[var(--error-200)]',
       icon: 'text-[var(--error-600)] dark:text-[var(--error-400)]'
@@ -56,6 +56,7 @@ export function KPICard({
 
   const getTrendColor = () => {
     if (trend === 'up') return 'text-[var(--success-600)] dark:text-[var(--success-400)]';
+    if (trend === 'down' && variant === 'warning') return 'text-[#7A271A] dark:text-[var(--error-300)]';
     if (trend === 'down') return 'text-[var(--error-600)] dark:text-[var(--error-400)]';
     return 'text-[var(--text-secondary)]';
   };
