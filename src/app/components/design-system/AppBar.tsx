@@ -16,10 +16,10 @@ interface AppBarProps {
 export function AppBar({ title, leftAction, rightActions = [], variant = 'default' }: AppBarProps) {
   const variantClasses = variant === 'glass'
     ? 'glass sticky top-0 shadow-[var(--shadow-sm)]'
-    : 'bg-[var(--surface)] border-b border-[var(--border-subtle)]';
+    : 'bg-[var(--surface)] border border-[var(--border-subtle)]';
 
   return (
-    <header className={`${variantClasses} z-[var(--z-sticky)] px-4 py-4`}>
+    <header className={`${variantClasses} z-[var(--z-sticky)] mx-4 mt-4 px-4 py-4 rounded-[var(--radius-xl)] overflow-hidden`}>
       <div className="flex items-center justify-between max-w-[1440px] mx-auto">
         <div className="flex items-center gap-3">
           {leftAction && (
